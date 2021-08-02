@@ -1,0 +1,514 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    scroll-behavior: smooth;
+}
+h1{
+    font-size: 3rem;
+
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sec1{
+background-color: #233737;
+}
+.content{
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    flex: 1;
+    height: 100%;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+   
+}
+.imgBox{
+    position: relative;
+    width: 50%;
+    animation-name: imgP;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    border: 1px solid white;
+}
+.imgBox .personalImg{
+
+    width: 100%;
+    object-fit: fill;
+    height: auto;
+}
+
+.imgBox .shadow{
+    /* -webkit-box-shadow: inset 0px 0px 20px 20px #000;
+    box-shadow: inset  0px 0px 20px 20px #000; */
+    content :"";
+    top:0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   
+}
+@keyframes imgP{
+    
+    0%   {transform:translateX(-10px)}
+    50% {transform:translateX(10px)}
+    100%   {transform:translateX(-10px)}
+}
+
+.content  *{
+    color: white !important;
+}
+.content1 *{
+    color: white;
+}
+.content2  *{
+    color: white;
+}
+.head-text{
+    position: relative;
+    transition: all 1s;
+    margin: 0;
+    padding: 0;
+    display :inline-block;
+    transform-origin: left;
+    opacity: 0;
+}
+.head-text2{
+    transform-origin: right;
+}
+
+
+.content-text{
+    
+    position: relative;
+    transition: 1s;
+    margin: 0;
+    padding: 0;
+    display :inline-block;
+    transform-origin: right;
+    opacity: 1;
+}
+
+.head-text[data-scroll="in"]{
+    transform: scaleX(1) ;
+    opacity: 1;
+}
+
+.head-text[data-scroll="out"]{
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+
+.subtitle{
+    transition: 1s;
+    transition-delay: 0.5s;
+    transform-origin: left;
+    text-align:justify;
+    font-size: 28px;
+    opacity: 0;
+}
+
+.subtitle[data-scroll="in"]{
+    opacity: 1;
+    
+}
+.subtitle[data-scroll="out"]{
+    opacity: 0;
+    
+}
+
+
+/* Section 2 */
+.sec2{
+    background-color: yellowgreen;
+}
+.content2{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+.content2 .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.c2-gifbox-p{
+    display: block;
+}
+
+.c2-gifbox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.c2-gifbox img{
+    flex: 1;
+    margin:10px ;
+}
+
+.content2 .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 40px;
+}
+.content2 .left .fullBox{
+    
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    left: -90px;
+    border-radius: 20% 0%;
+    transform:  translate(-18%,165%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    direction: rtl;
+    transition: 1s;
+    opacity: 1;
+    border: 5px solid black;
+}
+
+.content2 .left .fullBox[data-scroll="in"]{
+    transform: translate(0%,0%)
+}
+.content2 .left .fullBox[data-scroll="out"]{
+    opacity: 0;
+}
+.fullBox-mobile-box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.content2 .left .fullBox-mobile-box .fullBox-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    
+}
+.fullBox-mobile img{
+    height:80%;
+    border: 1px solid black;
+    border-radius: 1.5rem;
+}
+
+.content2 .left .fullBox .imgbox {
+    display: flex;
+    flex-wrap: wrap;
+    transform: translateY(-30%);
+    
+}
+.content2 .left .fullBox .imgbox[data-scroll="in"] {
+    animation: mobileViews   ;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+}
+@keyframes mobileViews{
+    0%{
+        transform: translateY(-30%);
+    }
+    50%{
+        transform: translateY(30%);
+    }
+    10%{
+        transform: translateY(-30%);
+    }
+}
+.content2 .left .fullBox .imgbox .jiringPwaImg{
+    object-fit: contain;
+    overflow: hidden;
+    width: 30%;
+    padding: 10px;
+    transition: 1s;
+    transform: scale(0);
+    transform-origin: center;
+}
+.content2 .left .fullBox .imgbox .jiringPwaImg[data-scroll="in"]{
+    transform: scale(1);
+    
+}
+
+.videoBox{
+    width: 100%;
+ 
+}
+.sec3{
+    background-color: teal;
+}
+.content3{
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+   overflow: hidden;
+}
+.content3 > h1,p,h3 ,h2,h4{
+    color: white;
+}
+.content3 .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: initial;
+    padding: 10px;
+}
+
+.content3 .left .textBox{
+    max-width: 100%;
+    background-color: #ffffff24;
+    clip-path: circle(0% at 0% 0%);
+    border-radius: 1.5rem;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    padding: 15px;
+    scale: 5;
+}
+
+.content3 .left .textBox[data-scroll="in"]{
+
+    clip-path: circle(150% at 0% 0%);
+    scale : 1
+}
+.content3 .left .textBox[data-scroll="out"]{
+
+    scale : 5
+}
+.content3 .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.content3 .right .maskBox{
+    clip-path: circle(10% at 100% 0%);
+    transition: 1s;
+    transform: translateX(130%);
+    opacity: 0;
+}
+
+.content3 .right  .maskBox[data-scroll="in"] {
+    clip-path: circle(150% at 100% 0%);
+    transform: translateX(0%);
+    opacity: 1;
+
+}
+.content3 .right  .maskBox[data-scroll="out"] {
+    /* display: none; */
+    visibility: hidden;
+}
+ .content3 .right .personalImg{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+
+
+ }
+
+  .maskBox .imgbox{
+     width: 100%;
+     height: 100%;
+     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+ }
+ .maskBox .imgbox .jiringPwaImg{
+    width: 100%;
+    border: 15px solid black;
+    border-radius: 2rem;
+}
+.JiringSite-mobile{
+    width: 16% !important;
+    border: 5px solid black;
+    position: absolute;
+    bottom: -36px;
+    left: -13px;
+    border-radius: 0.7rem;
+}
+
+
+/* section4 */
+.sec4{
+    background-color: #00b0ff;
+}
+
+.content4{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  
+    overflow: hidden;
+}
+.content4 .top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    
+}
+.content4 .top .subtitle{
+    text-align: center;
+}
+.content4 .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex:2;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.content4 .bottom .rounderBody{
+    border-radius: 50%;
+    background-color: white;
+    clip-path: circle(2% at 50% 50%);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    width: 700px;
+    height: 700px;
+}
+
+.content4 .bottom .rounderBody img{
+   width: 80%;
+   object-fit: cover;
+   border: 10px solid black;
+   border-radius: 1rem;
+}
+
+.content4 .bottom .rounderBody[data-scroll="in"]{
+  
+    clip-path: circle(100% at 50% 50%);
+}
+.content4 .bottom .rounderBody[data-scroll="out"]{
+  
+    clip-path: circle(2% at 50% 50%);
+}
+
+
+@media all and (max-width:678px) and (min-width:300px){
+
+    .content3{
+        flex-direction: column;
+    }
+    .content2{
+        flex-direction: column-reverse;
+    }
+    .maskBox .imgbox .jiringPwaImg{
+  
+        border: 5px solid black !important;
+
+    }
+    .JiringSite-mobile{
+
+        border: 2px solid black !important;
+  
+    }
+    h1{
+        font-size: 2rem !important;
+    }
+    h2 , h3{
+        font-size : 1.5rem !important;
+    }
+    p{
+        font-size :1rem !important
+    }
+    .rounderBody{
+        width: 300px !important ;
+        height: 300px !important;
+    }
+    .fullBox{
+        display: none !important;
+    }
+  
+    .c2-gifbox-p{
+        display: none !important;
+    }
+} 
+@media all and (min-width:678px) and (max-width:1990){
+    
+    .fullBox-mobile-box{
+        display: none !important;
+    }
+
+    .c2-gifbox-p{
+        display: block !important;
+    }
+
+   
+}
